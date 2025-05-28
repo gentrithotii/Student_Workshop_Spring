@@ -26,9 +26,11 @@ public class StudentManagementConsoleImpl implements StudentManagement {
         System.out.print("Enter student name: ");
         String name = userInputService.getString();
 
+        //TODO Add sequencer or change id to UUID
+        System.out.print("Enter the id: ");
+        int userId = userInputService.getInt();
 
-        Student student = new Student(name);
-        student.setName(name);
+        Student student = new Student(userId, name);
 
         return student;
     }

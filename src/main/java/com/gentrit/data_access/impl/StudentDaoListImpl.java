@@ -12,6 +12,9 @@ public class StudentDaoListImpl implements StudentDao {
 
     private List<Student> students;
 
+    public StudentDaoListImpl(List<Student> students) {
+        this.students = students;
+    }
 
     @Override
     public Student save(Student student) {

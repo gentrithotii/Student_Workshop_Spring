@@ -16,6 +16,7 @@ public class Main {
         StudentDao studentDao = context.getBean(StudentDao.class);
         UserInputService userInputService = context.getBean(UserInputService.class);
         StudentManagement studentManagement = context.getBean(StudentManagement.class);
-        studentManagement.create();
+        studentManagement.save(studentManagement.create());
+        System.out.println(studentManagement.findAll());
     }
 }
