@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ScannerInputService implements UserInputService {
-    private ScannerConfig scInput;
+    private final ScannerConfig scInput;
 
     @Autowired
     public ScannerInputService(ScannerConfig scInput) {
