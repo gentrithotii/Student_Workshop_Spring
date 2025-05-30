@@ -46,12 +46,10 @@ public class StudentManagementConsoleImpl implements StudentManagement {
     @Override
     public Student findById(int id) {
         if (id <= 0) {
-            throw new IllegalArgumentException("Id cant be -number or  0");
+            throw new IllegalArgumentException("Id can't be negative number or  0");
         }
         Student existing = studentDao.findById(id);
-        if (existing == null) {
-            throw new IllegalArgumentException("Student not found");
-        }
+
         return existing;
     }
 
