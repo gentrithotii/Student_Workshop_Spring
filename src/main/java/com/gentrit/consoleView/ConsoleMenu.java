@@ -2,6 +2,7 @@ package com.gentrit.consoleView;
 
 import com.gentrit.models.Student;
 import com.gentrit.service.StudentManagement;
+import com.gentrit.util.ConsoleColor;
 import com.gentrit.util.UserInputService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -69,7 +70,7 @@ public class ConsoleMenu {
                 case 1:
                     try {
                         Student createdStudent = getStudentManagement().save(getStudentManagement().create());
-                        System.out.println("Student: " + createdStudent + "has been created");
+                        System.out.println(ConsoleColor.ANSI_GREEN +  "Student: " + createdStudent + "has been created" + ConsoleColor.ANSI_RESET);
 
                     } catch (NumberFormatException e) {
                         System.err.println("Id cant be letters !");
@@ -79,7 +80,7 @@ public class ConsoleMenu {
                     break;
                 case 2:
                     Student byIdStudent = getStudentManagement().findById(findByIdChoice());
-                    System.out.println("Found: " + byIdStudent);
+                    System.out.println(ConsoleColor.ANSI_GREEN + "Found: " + byIdStudent + ConsoleColor.ANSI_RESET);
                     break;
                 case 3:
                     System.out.println(getStudentManagement().findAll());
@@ -91,7 +92,7 @@ public class ConsoleMenu {
                     menuLoop = false;
                     break;
                 default:
-                    System.out.println("Wrong choice");
+                    System.out.println(ConsoleColor.ANSI_RED + "Wrong choice" + ConsoleColor.ANSI_RESET);
             }
         } catch (NumberFormatException e) {
             System.err.println("Invalid input ! only takes numbers from 1 to 4 and 0 to exit");

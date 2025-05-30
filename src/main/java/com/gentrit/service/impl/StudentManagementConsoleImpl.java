@@ -22,7 +22,7 @@ public class StudentManagementConsoleImpl implements StudentManagement {
 
     @Override
     public Student create() {
-        System.out.println("Creating a new student:");
+        System.out.println("Creating a new student");
         System.out.print("Enter student name: ");
         String name = userInputService.getString();
 
