@@ -102,10 +102,12 @@ public class ConsoleMenu {
                     break;
                 case 0:
                     menuLoop = false;
+                    System.out.println("Bye have a great time!");
                     break;
                 default:
                     System.out.println(ConsoleColor.ANSI_RED + "Wrong choice" + ConsoleColor.ANSI_RESET);
             }
+
         } catch (NumberFormatException e) {
             System.err.println("Invalid input ! only takes numbers from 1 to 4 and 0 to exit");
         }
