@@ -66,9 +66,9 @@ public class StudentManagementConsoleImpl implements StudentManagement {
             throw new IllegalArgumentException("Student cant be null");
         }
         Student foundStudent = studentDao.findById(student.getId());
-        if (foundStudent != null) {
 
-            return studentDao.save(foundStudent);
+        if (foundStudent != null) {
+            foundStudent.setName(student.getName());
         }
         return null;
     }

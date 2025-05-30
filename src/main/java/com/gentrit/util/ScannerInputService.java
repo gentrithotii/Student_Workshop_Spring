@@ -21,6 +21,6 @@ public class ScannerInputService implements UserInputService {
 
     @Override
     public int getInt() {
-        return scInput.getScanner().nextInt();
+        return Integer.parseInt(scInput.getScanner().nextLine());
     }
 }

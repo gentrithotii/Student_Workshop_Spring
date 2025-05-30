@@ -2,6 +2,7 @@ package com.gentrit;
 
 import com.gentrit.config.AppConfiguration;
 import com.gentrit.data_access.StudentDao;
+import com.gentrit.models.Student;
 import com.gentrit.service.StudentManagement;
 import com.gentrit.service.impl.StudentManagementConsoleImpl;
 import com.gentrit.util.ScannerInputService;
@@ -16,7 +17,16 @@ public class Main {
         StudentDao studentDao = context.getBean(StudentDao.class);
         UserInputService userInputService = context.getBean(UserInputService.class);
         StudentManagement studentManagement = context.getBean(StudentManagement.class);
-        studentManagement.save(studentManagement.create());
+
+        for (int i = 0; i < 2; i++) {
+            studentManagement.save(studentManagement.create());
+        }
+
         System.out.println(studentManagement.findAll());
+
+        studentManagement.edit(new Student(1, "Testi"));
+
+        System.out.println(studentManagement.findAll());
+
     }
 }
