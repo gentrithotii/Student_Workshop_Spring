@@ -7,6 +7,8 @@ import com.gentrit.util.UserInputService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class ConsoleMenu {
     private final StudentManagement studentManagement;
@@ -39,7 +41,7 @@ public class ConsoleMenu {
     private Student editStudent() {
         System.out.print("Enter the student id you want to update ");
         int idToFind = getUserInputService().getInt();
-        System.out.print("Enter the name you want to update the student to");
+        System.out.print("Enter the name you want to update the student to: ");
         String editStudentName = getUserInputService().getString();
 
         Student studentToUpdate = new Student(idToFind, editStudentName);
@@ -70,7 +72,7 @@ public class ConsoleMenu {
                 case 1:
                     try {
                         Student createdStudent = getStudentManagement().save(getStudentManagement().create());
-                        System.out.println(ConsoleColor.ANSI_GREEN +  "Student: " + createdStudent + "has been created" + ConsoleColor.ANSI_RESET);
+                        System.out.println(ConsoleColor.ANSI_GREEN + "Student: " + createdStudent + "has been created" + ConsoleColor.ANSI_RESET);
 
                     } catch (NumberFormatException e) {
                         System.err.println("Id cant be letters !");
@@ -80,10 +82,20 @@ public class ConsoleMenu {
                     break;
                 case 2:
                     Student byIdStudent = getStudentManagement().findById(findByIdChoice());
-                    System.out.println(ConsoleColor.ANSI_GREEN + "Found: " + byIdStudent + ConsoleColor.ANSI_RESET);
+                    if (byIdStudent != null) {
+                        System.out.println(ConsoleColor.ANSI_GREEN + "Found: " + byIdStudent + ConsoleColor.ANSI_RESET);
+                    } else {
+                        System.out.println(ConsoleColor.ANSI_RED + "Student with that id not found !" + ConsoleColor.ANSI_RESET);
+                    }
                     break;
                 case 3:
-                    System.out.println(getStudentManagement().findAll());
+                    List<Student> students = getStudentManagement().findAll();
+
+                    if (students.isEmpty()) {
+                        System.out.println(ConsoleColor.ANSI_YELLOW + "Student List is empty" + ConsoleColor.ANSI_RESET);
+                    } else {
+                        students.forEach((i) -> System.out.println(i));
+                    }
                     break;
                 case 4:
                     getStudentManagement().edit(editStudent());
