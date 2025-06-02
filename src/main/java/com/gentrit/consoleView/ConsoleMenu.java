@@ -94,7 +94,7 @@ public class ConsoleMenu {
                     if (students.isEmpty()) {
                         System.out.println(ConsoleColor.ANSI_YELLOW + "Student List is empty" + ConsoleColor.ANSI_RESET);
                     } else {
-                        students.forEach((i) -> System.out.println(i));
+                        students.forEach((i) -> System.out.println(ConsoleColor.ANSI_PURPLE + i + ConsoleColor.ANSI_RESET));
                     }
                     break;
                 case 4:

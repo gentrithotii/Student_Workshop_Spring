@@ -1,24 +1,23 @@
 package com.gentrit.models;
 
+import com.gentrit.models.sequencer.StudentSequencer;
+
 public class Student {
     private int id;
     private String name;
 
     public Student(String name) {
         setName(name);
+        this.id = StudentSequencer.nextId();
     }
 
     public Student(int id, String name) {
         this(name);
-        setId(id);
+        this.id = id;
     }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
