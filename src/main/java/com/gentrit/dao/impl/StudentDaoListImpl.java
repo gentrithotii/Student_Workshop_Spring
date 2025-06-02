@@ -1,11 +1,11 @@
-package com.gentrit.data_access.impl;
+package com.gentrit.dao.impl;
 
-import com.gentrit.data_access.StudentDao;
-import com.gentrit.models.Student;
+import com.gentrit.dao.StudentDao;
+import com.gentrit.dao.sequencer.StudentSequencer;
+import com.gentrit.domain.model.Student;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.UUID;
 
 @Component
 public class StudentDaoListImpl implements StudentDao {
@@ -18,6 +18,7 @@ public class StudentDaoListImpl implements StudentDao {
 
     @Override
     public Student save(Student student) {
+        student.setId(StudentSequencer.nextId());
         students.add(student);
         return student;
     }

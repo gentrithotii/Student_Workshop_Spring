@@ -1,7 +1,7 @@
 package com.gentrit.service.impl;
 
-import com.gentrit.data_access.StudentDao;
-import com.gentrit.models.Student;
+import com.gentrit.dao.StudentDao;
+import com.gentrit.domain.model.Student;
 import com.gentrit.service.StudentManagement;
 import com.gentrit.util.UserInputService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,12 +10,12 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class StudentManagementConsoleImpl implements StudentManagement {
-    private UserInputService userInputService;
-    private StudentDao studentDao;
+public class StudentManagementImpl implements StudentManagement {
+    private final UserInputService userInputService;
+    private final StudentDao studentDao;
 
     @Autowired
-    public StudentManagementConsoleImpl(UserInputService userInputService, StudentDao studentDao) {
+    public StudentManagementImpl(UserInputService userInputService, StudentDao studentDao) {
         this.userInputService = userInputService;
         this.studentDao = studentDao;
     }

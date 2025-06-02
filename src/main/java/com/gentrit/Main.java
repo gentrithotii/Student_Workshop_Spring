@@ -1,7 +1,7 @@
 package com.gentrit;
 
 import com.gentrit.config.AppConfiguration;
-import com.gentrit.consoleView.ConsoleMenu;
+import com.gentrit.view.ConsoleMenu;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {

@@ -1,6 +1,6 @@
-package com.gentrit.consoleView;
+package com.gentrit.view;
 
-import com.gentrit.models.Student;
+import com.gentrit.domain.model.Student;
 import com.gentrit.service.StudentManagement;
 import com.gentrit.util.ConsoleColor;
 import com.gentrit.util.UserInputService;

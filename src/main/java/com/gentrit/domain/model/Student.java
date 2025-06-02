@@ -1,6 +1,4 @@
-package com.gentrit.models;
-
-import com.gentrit.models.sequencer.StudentSequencer;
+package com.gentrit.domain.model;
 
 public class Student {
     private int id;
@@ -8,7 +6,6 @@ public class Student {
 
     public Student(String name) {
         setName(name);
-        this.id = StudentSequencer.nextId();
     }
 
     public Student(int id, String name) {
@@ -18,6 +15,10 @@ public class Student {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

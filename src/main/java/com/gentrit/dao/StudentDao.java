@@ -1,6 +1,6 @@
-package com.gentrit.data_access;
+package com.gentrit.dao;
 
-import com.gentrit.models.Student;
+import com.gentrit.domain.model.Student;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.gentrit.models.sequencer;
+package com.gentrit.dao.sequencer;
 
 public class StudentSequencer {
     private static int idSequencer;

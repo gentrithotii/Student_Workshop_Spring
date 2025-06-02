@@ -1,6 +1,6 @@
 package com.gentrit.service;
 
-import com.gentrit.models.Student;
+import com.gentrit.domain.model.Student;
 
 import java.util.List;
 
